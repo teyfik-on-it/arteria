@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.4.2",
@@ -16,6 +17,8 @@
     "clsx": "^1.2.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.10",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "next": "13.4.10",
     "postcss": "8.4.26",
     "prettier": "^3.0.0",
@@ -26,5 +29,11 @@
     "teyfik-directory-loader": "^0.0.11",
     "teyfik-i18n-next": "^0.0.27",
     "typescript": "5.1.6"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
   }
 }
