@@ -15,5 +15,8 @@
       "en": "English",
       "tr": "Türkçe"
     }
+  },
+  "footer": {
+    "copyright": "© 2023 Arteria. All rights reserved."
   }
 }
