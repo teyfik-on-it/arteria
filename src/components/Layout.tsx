@@ -3,6 +3,31 @@ import { Open_Sans } from 'next/font/google';
 import Head from 'next/head';
 import { HTMLAttributes, PropsWithChildren, useMemo } from 'react';
 import { useTranslation } from 'teyfik-i18n-next';
+import HeaderMenu from './Layout/HeaderMenu';
+
+const links: Parameters<typeof HeaderMenu>[0]['items'] = [
+  {
+    href: '/',
+    label: 'common.nav.home',
+  },
+  {
+    href: '#company',
+    label: 'common.nav.company.label',
+    children: [
+      { href: '/company/about', label: 'common.nav.company.about' },
+      { href: '/company/mission', label: 'common.nav.company.mission' },
+      { href: '/company/vision', label: 'common.nav.company.vision' },
+    ],
+  },
+  { href: '/contact', label: 'common.nav.contact' },
+  {
+    label: 'common.nav.language.label',
+    children: [
+      { href: '', locale: 'en', label: 'common.nav.language.en' },
+      { href: '', locale: 'tr', label: 'common.nav.language.tr' },
+    ],
+  },
+];
 
 const openSans = Open_Sans({ subsets: ['latin-ext'] });
 
@@ -41,7 +66,7 @@ export default function Layout({
         <meta name="og:description" content={pageDescription} />
       </Head>
 
-      <header></header>
+      <HeaderMenu items={links} />
 
       <main>{children}</main>
 

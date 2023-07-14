@@ -1,4 +1,19 @@
 {
   "title": "Arteria",
-  "description": "Discover exquisite craftsmanship and timeless elegance at Arteria, your destination for exceptional furniture pieces that elevate any space. Explore now!"
+  "description": "Discover exquisite craftsmanship and timeless elegance at Arteria, your destination for exceptional furniture pieces that elevate any space. Explore now!",
+  "nav": {
+    "home": "Home",
+    "company": {
+      "label": "Company",
+      "about": "About",
+      "mission": "Mission",
+      "vision": "Vision"
+    },
+    "contact": "Contact",
+    "language": {
+      "label": "Language",
+      "en": "English",
+      "tr": "Türkçe"
+    }
+  }
 }
