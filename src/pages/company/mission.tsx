@@ -3,7 +3,7 @@ import pageWithTranslations from '@/helpers/pageWithTranslations';
 import { Container } from '@mantine/core';
 import { useTranslation } from 'teyfik-i18n-next';
 
-export default function About() {
+export default function Mission() {
   const { t } = useTranslation();
 
   return (
