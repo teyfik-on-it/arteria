@@ -21,6 +21,7 @@ import { IconChevronDown } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'teyfik-i18n-next';
+import Logo from '../Logo';
 
 const useStyles = createStyles((theme) => ({
   inner: {
@@ -158,14 +159,10 @@ export default function HeaderMenu({ items }: HeaderSearchProps) {
 
   return (
     <>
-      <Header height={56} mb={120}>
+      <Header height={56}>
         <Container>
           <div className={classes.inner}>
-            <Link href="/">
-              <div className="w-28 h-8 flex items-center">
-                <span className="select-none text-xl">Arteria</span>
-              </div>
-            </Link>
+            <Logo />
 
             <Group spacing={5} className={classes.links}>
               {items.map((item) => {

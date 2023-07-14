@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { HTMLAttributes, PropsWithChildren, useMemo } from 'react';
 import { useTranslation } from 'teyfik-i18n-next';
 import HeaderMenu from './Layout/HeaderMenu';
+import FooterLinks from './Layout/FooterMenu';
 
 const links: Parameters<typeof HeaderMenu>[0]['items'] = [
   {
@@ -70,7 +71,7 @@ export default function Layout({
 
       <main>{children}</main>
 
-      <footer></footer>
+      <FooterLinks data={links} />
     </section>
   );
 }
