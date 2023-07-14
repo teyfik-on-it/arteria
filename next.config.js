@@ -1,10 +1,10 @@
-const defaultLocale = "en";
+const defaultLocale = 'en';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
     defaultLocale,
-    locales: [defaultLocale, "tr"],
+    locales: [defaultLocale, 'tr'],
   },
   reactStrictMode: true,
 };

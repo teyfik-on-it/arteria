@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import { Open_Sans } from "next/font/google";
-import Head from "next/head";
-import { HTMLAttributes, PropsWithChildren, useMemo } from "react";
-import { useTranslation } from "teyfik-i18n-next";
+import clsx from 'clsx';
+import { Open_Sans } from 'next/font/google';
+import Head from 'next/head';
+import { HTMLAttributes, PropsWithChildren, useMemo } from 'react';
+import { useTranslation } from 'teyfik-i18n-next';
 
-const openSans = Open_Sans({ subsets: ["latin-ext"] });
+const openSans = Open_Sans({ subsets: ['latin-ext'] });
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -19,13 +19,13 @@ export default function Layout({
   ...props
 }: PropsWithChildren<Props>) {
   const { t } = useTranslation();
-  const appTitle = t("common.title");
+  const appTitle = t('common.title');
   const pageTitle = useMemo(
-    () => (title ? t(title) + " • " + appTitle : appTitle),
+    () => (title ? t(title) + ' • ' + appTitle : appTitle),
     [appTitle, t, title],
   );
   const pageDescription = useMemo(
-    () => (description ? t(description) : t("common.description")),
+    () => (description ? t(description) : t('common.description')),
     [t, description],
   );
 

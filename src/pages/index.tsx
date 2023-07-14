@@ -1,5 +1,5 @@
-import Layout from "@/components/Layout";
-import pageWithTranslations from "@/helpers/pageWithTranslations";
+import Layout from '@/components/Layout';
+import pageWithTranslations from '@/helpers/pageWithTranslations';
 
 export default function Home() {
   return (
@@ -13,4 +13,4 @@ export default function Home() {
   );
 }
 
-export const getStaticProps = pageWithTranslations("common index");
+export const getStaticProps = pageWithTranslations('common index');
