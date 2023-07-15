@@ -12,6 +12,11 @@ const links: Parameters<typeof HeaderMenu>[0]['items'] = [
     label: 'common.nav.home',
   },
   {
+    href: '/gallery',
+    label: 'common.nav.gallery',
+  },
+
+  {
     href: '#company',
     label: 'common.nav.company.label',
     children: [

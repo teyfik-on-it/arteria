@@ -131,39 +131,6 @@ export default function FooterLinks({ data }: FooterLinksProps) {
   const { t } = useTranslation();
   const { classes } = useStyles();
 
-  const groups = data.map((group) => {
-    if ('children' in group) {
-      return (
-        <div className={classes.wrapper} key={group.label}>
-          <Text className={clsx(classes.title, 'cursor-default')}>
-            {t(group.label)}
-          </Text>
-
-          {group.children.map((link, index) => (
-            <Link key={index} href={link.href}>
-              <Text
-                className={classes.link}
-                onClick={(event) => event.preventDefault()}
-              >
-                {t(link.label)}
-              </Text>
-            </Link>
-          ))}
-        </div>
-      );
-    }
-
-    return (
-      <div className={classes.wrapper} key={group.label}>
-        <Link href={group.href}>
-          <Text className={clsx(classes.title, 'hover:underline')}>
-            {t(group.label)}
-          </Text>
-        </Link>
-      </div>
-    );
-  });
-
   return (
     <footer className={classes.footer}>
       <Container className={classes.inner}>
@@ -173,7 +140,40 @@ export default function FooterLinks({ data }: FooterLinksProps) {
             {t('common.description')}
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
+        <div className={classes.groups}>
+          <div className={classes.wrapper}>
+            {data.map((item) =>
+              'children' in item ? null : (
+                <Link key={item.href} href={item.href}>
+                  <Text className={clsx(classes.title, 'hover:underline')}>
+                    {t(item.label)}
+                  </Text>
+                </Link>
+              ),
+            )}
+          </div>
+
+          {data.map((item) =>
+            'children' in item ? (
+              <div className={classes.wrapper} key={item.label}>
+                <Text className={clsx(classes.title, 'cursor-default')}>
+                  {t(item.label)}
+                </Text>
+
+                {item.children.map((child, index) => (
+                  <Link key={index} href={child.href}>
+                    <Text
+                      className={classes.link}
+                      onClick={(event) => event.preventDefault()}
+                    >
+                      {t(child.label)}
+                    </Text>
+                  </Link>
+                ))}
+              </div>
+            ) : null,
+          )}
+        </div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">

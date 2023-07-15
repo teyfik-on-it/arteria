@@ -7,7 +7,7 @@ export default function Mission() {
   const { t } = useTranslation();
 
   return (
-    <Layout>
+    <Layout title="mission.title">
       <Container>
         <section className="flex mt-12 gap-8 justify-between">
           <div className="w-full md:max-w-xl">

@@ -9,7 +9,7 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <Layout>
+    <Layout title="about.title">
       <Container>
         <section className="flex mt-12 gap-8 justify-between">
           <div className="w-full md:max-w-md">

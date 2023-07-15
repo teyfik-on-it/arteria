@@ -7,7 +7,7 @@ export default function Vision() {
   const { t } = useTranslation();
 
   return (
-    <Layout>
+    <Layout title="vision.title">
       <Container>
         <section className="flex mt-12 gap-8 justify-between">
           <div className="w-full md:max-w-xl">
